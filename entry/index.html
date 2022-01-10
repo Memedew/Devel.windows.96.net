@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Entry</title>
+	<link rel="stylesheet" type="text/css" href="src/ui/main.css">
+	<style type="text/css">
+		.window {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			flex-grow:  0;
+		}
+
+		.center {
+			margin: 12px 0;
+		}
+
+		input[type=submit] {
+			margin-top: 4px;
+			float: right;
+		}
+
+		hr {
+			width: calc(100% - 8px);
+		}
+
+		img {
+			float: right;
+			margin-left: 8px;
+			width: 147px;
+			height: 147px;
+		}
+
+		.content {
+			display: flex;
+			width: 390px;
+		}
+
+		textarea {
+			display: block;
+			margin-top: 6px;
+			width: 100%;
+			height: 85px;
+			padding: 4px;
+			font-family: monospace;
+		}
+
+		.content div {
+			width: 390px;
+		}
+
+		::-webkit-scrollbar {
+			width: 5px;
+		}
+		::-webkit-scrollbar-track {
+			background: #0003;
+		}
+		::-webkit-scrollbar-thumb {
+			background: #78a9;
+		}
+	</style>
+</head>
+<body>
+	<div class="window active">
+		<span class="title">Windows96 Dev Edition</span>
+		<form class="content" spellcheck="false">
+			<div>
+				<span>Enter your Windows 96 product key<br>below, then press Login. <a href="https://www.patreon.com/win96" target="_blank">Patreon</a></span>
+				<textarea autofocus name="input" wrap="soft" placeholder="Enter a product key ..."></textarea>
+
+				<input type="submit" value="Login">
+			</div>
+
+			<img class="inset" src="src/ui/welcome.png">
+		</form>
+	</div>
+	<script>var b=document.querySelector('textarea');b.onkeydown=e=>{if(e.keyCode==13&&b.value.endsWith('------ END PRODUCT KEY ------')){e.preventDefault();document.querySelector('input[type="submit"]').click()}}</script>
+</body>
+</html>
